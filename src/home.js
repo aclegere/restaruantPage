@@ -29,4 +29,4 @@ const renderHome = (() => {
     contentContainer.appendChild(home);
   })();
   
-  export {renderHome};
+export {renderHome};

@@ -20,6 +20,8 @@ const pageLoad = (() => {
     </nav>
   `;
     
+    
+
     const footer = document.createElement("footer");
     footer.innerHTML =
     `<p id="footerTxt">Blackstone Bistro Restaruants Inc. &copy; 2022</p>`
@@ -69,7 +71,7 @@ const renderHome = (() => {
     contentContainer.appendChild(home);
   })();
   
-  
+
 
 /***/ })
 /******/ 	]);
@@ -149,6 +151,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _onload__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_onload__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 
+
+//import {renderMenu} from "./menu";
 
 
 })();

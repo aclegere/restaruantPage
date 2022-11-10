@@ -14,6 +14,8 @@ const pageLoad = (() => {
     </nav>
   `;
     
+    
+
     const footer = document.createElement("footer");
     footer.innerHTML =
     `<p id="footerTxt">Blackstone Bistro Restaruants Inc. &copy; 2022</p>`
