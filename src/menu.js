@@ -37,19 +37,72 @@ let menuItem6 = new foodItem(
     "Kid's choice! Chicken Tendies, Burger, or Fish sticks. Sides include kid's portion of fries, mac and cheese, and mixed veggies."
 )
 
-const renderMenu = (() => {
-    //container
-    const contentContainer = document.querySelector("#content");
-    const menu = document.createElement("div");
-    menu.innerHTML = 
-    `  
-    <h1>Menu</h1>
-    <div class="menu-container">
-        <p>I'm working!</p>
-    </div>
-    `;
 
-    contentContainer.appendChild(menu);
-})();
-  
-export {renderMenu};
+export function renderMenu() {
+    const contentContainer = document.querySelector("#content");
+    
+    
+
+    const menuContainer = document.createElement("div");
+    menuContainer.className='menuContainer';
+
+    //all the menu cards 
+    const menuCard1 = document.createElement('div')
+    menuCard1.className = 'menuCard';
+    menuCard1.innerHTML =`
+        ${menuItem1.name}<br>
+        ${menuItem1.description}<br>
+        ${menuItem1.price}<br>
+    ` 
+    
+
+    const menuCard2 = document.createElement('div')
+    menuCard2.className = 'menuCard';
+    menuCard2.innerHTML =`
+        ${menuItem2.name}<br>
+        ${menuItem2.description}<br>
+        ${menuItem2.price}<br>
+    ` 
+
+    const menuCard3 = document.createElement('div')
+    menuCard3.className = 'menuCard';
+    menuCard3.innerHTML =`
+        ${menuItem3.name}<br>
+        ${menuItem3.description}<br>
+        ${menuItem3.price}<br>
+    ` 
+
+    const menuCard4 = document.createElement('div')
+    menuCard4.className = 'menuCard';
+    menuCard4.innerHTML =`
+        ${menuItem4.name}<br>
+        ${menuItem4.description}<br>
+        ${menuItem4.price}<br>
+    ` 
+
+    const menuCard5 = document.createElement('div')
+    menuCard5.className = 'menuCard';
+    menuCard5.innerHTML =`
+        ${menuItem5.name}<br>
+        ${menuItem5.description}<br>
+        ${menuItem5.price}<br>
+    ` 
+
+    const menuCard6 = document.createElement('div')
+    menuCard6.className = 'menuCard';
+    menuCard6.innerHTML =`
+        ${menuItem6.name}<br>
+        ${menuItem6.description}<br>
+        ${menuItem6.price}<br>
+    ` 
+   
+    //append them
+    menuContainer.appendChild(menuCard1);
+    menuContainer.appendChild(menuCard2);
+    menuContainer.appendChild(menuCard3);
+    menuContainer.appendChild(menuCard4);
+    menuContainer.appendChild(menuCard5);
+    menuContainer.appendChild(menuCard6);
+
+    contentContainer.appendChild(menuContainer);
+};

@@ -1,26 +1,50 @@
-const pageLoad = (() => {
+export function pageLoad(){
     const contentContainer = document.querySelector("#content");
     const header = document.createElement("header");
-    header.innerHTML = 
-    `
-    <nav>
-        <img id="hat" src="chef-hat.png" alt="picture of a bowl">
-        <h2 id="restName">Blackstone Bistro</h2>
-        <ul class="links">
-            <li data-tab-target="#home" id="home">Home</li>
-            <li data-tab-target="#menu" id="menu">Menu</li>
-            <li data-tab-target="#contact" id="contact">Contact</li>
-        </ul>
-    </nav>
-  `;
-    
-    
-
+    const logo = document.createElement("img");
+    const head2=document.createElement("h2");
+    const homeBtn=document.createElement("div");
+    const menuBtn=document.createElement("div");
+    const btnContainer=document.createElement("div");
+    const contactBtn=document.createElement("div");
     const footer = document.createElement("footer");
-    footer.innerHTML =
-    `<p id="footerTxt">Blackstone Bistro Restaruants Inc. &copy; 2022</p>`
-    ;
+    const footerP = document.createElement("p");
+
+    //logo attributes 
+    logo.id="hat";
+    logo.src="chef-hat.png";
+    logo.alt="picture of a bowl";
+
+    //h2 attributes 
+    head2.id="restName";
+    head2.innerHTML="Blackstone Bistro";
+
+    //nav buttons
+    homeBtn.id="home";
+    homeBtn.innerHTML="Home";
     
-    contentContainer.appendChild(header)
-    contentContainer.appendChild(footer)
-  })();
+    menuBtn.id="menu";
+    menuBtn.innerHTML="Menu";
+    
+    contactBtn.id="contact";
+    contactBtn.innerHTML="Contact";
+
+    btnContainer.className="links";
+    btnContainer.appendChild(homeBtn);
+    btnContainer.appendChild(menuBtn);
+    btnContainer.appendChild(contactBtn);
+
+
+    //append elements to header
+    header.appendChild(logo);
+    header.appendChild(head2); 
+    header.appendChild(btnContainer);
+
+    //footer 
+    footerP.id="footerTxt";
+    footer.innerHTML="Blackstone Bistro Restaruants Inc. &copy; 2022";
+
+
+    contentContainer.appendChild(header);
+    contentContainer.appendChild(footer);
+};
