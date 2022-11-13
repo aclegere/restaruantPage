@@ -1,3 +1,7 @@
+import { btnSwitcher } from ".";
+import {pageLoad} from "./onload";
+import {renderMenu} from "./menu";
+
 export function renderHome(){
   const contentContainer = document.querySelector("#content");
   const homeContainer = document.createElement('div');
@@ -37,4 +41,14 @@ export function renderHome(){
   homeContainer.appendChild(homeHero);
   
   contentContainer.appendChild(homeContainer);
+  
+  //btn switcher
+  btnSwitcher();
+
+  const orderNowBtn = document.querySelector("#order-now");
+  orderNowBtn.addEventListener("click", function(){
+    content.innerHTML='';
+    pageLoad();
+    renderMenu();
+});
 }

@@ -1,3 +1,5 @@
+import { btnSwitcher } from ".";
+
 class foodItem {
     constructor(name, price, description){
         this.name = name;
@@ -41,8 +43,6 @@ let menuItem6 = new foodItem(
 export function renderMenu() {
     const contentContainer = document.querySelector("#content");
     
-    
-
     const menuContainer = document.createElement("div");
     menuContainer.className='menuContainer';
 
@@ -105,4 +105,8 @@ export function renderMenu() {
     menuContainer.appendChild(menuCard6);
 
     contentContainer.appendChild(menuContainer);
+
+    //btn switcher
+    btnSwitcher();
+   
 };

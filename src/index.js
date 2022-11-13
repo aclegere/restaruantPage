@@ -1,6 +1,7 @@
 import {pageLoad} from "./onload";
 import {renderHome} from "./home";
 import {renderMenu} from "./menu";
+import {renderContact} from "./contact";
 
 function pageInitialize(){
     pageLoad();
@@ -8,8 +9,29 @@ function pageInitialize(){
 }
 
 pageInitialize();
+btnSwitcher();
 
-let content = document.querySelector('#content');
+//button switch
+export function btnSwitcher() {
+    let content = document.querySelector('#content');
+    const menuTab = document.querySelector("#menu");
+    menuTab.addEventListener("click", function(){
+        content.innerHTML='';
+        pageLoad();
+        renderMenu();
+});
 
-//button switch 
-const menuTab = document.querySelector("#menu");
+    const homeTab = document.querySelector('#home');
+    homeTab.addEventListener("click", function(){
+        content.innerHTML='';
+        pageLoad();
+        renderHome();
+});
+
+    const contactTab = document.querySelector('#contact');
+    contactTab.addEventListener("click", function(){
+        content.innerHTML='';
+        pageLoad();
+        renderContact();
+});
+};

@@ -1,7 +1,56 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
-/* 0 */,
+/* 0 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "btnSwitcher": () => (/* binding */ btnSwitcher)
+/* harmony export */ });
+/* harmony import */ var _onload__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+
+
+
+
+
+function pageInitialize(){
+    (0,_onload__WEBPACK_IMPORTED_MODULE_0__.pageLoad)();
+    (0,_home__WEBPACK_IMPORTED_MODULE_1__.renderHome)();
+}
+
+pageInitialize();
+btnSwitcher();
+
+//button switch
+function btnSwitcher() {
+    let content = document.querySelector('#content');
+    const menuTab = document.querySelector("#menu");
+    menuTab.addEventListener("click", function(){
+        content.innerHTML='';
+        (0,_onload__WEBPACK_IMPORTED_MODULE_0__.pageLoad)();
+        (0,_menu__WEBPACK_IMPORTED_MODULE_2__.renderMenu)();
+});
+
+    const homeTab = document.querySelector('#home');
+    homeTab.addEventListener("click", function(){
+        content.innerHTML='';
+        (0,_onload__WEBPACK_IMPORTED_MODULE_0__.pageLoad)();
+        (0,_home__WEBPACK_IMPORTED_MODULE_1__.renderHome)();
+});
+
+    const contactTab = document.querySelector('#contact');
+    contactTab.addEventListener("click", function(){
+        content.innerHTML='';
+        (0,_onload__WEBPACK_IMPORTED_MODULE_0__.pageLoad)();
+        (0,_contact__WEBPACK_IMPORTED_MODULE_3__.renderContact)();
+});
+};
+
+/***/ }),
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -68,6 +117,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "renderHome": () => (/* binding */ renderHome)
 /* harmony export */ });
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var _onload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+
+
+
+
 function renderHome(){
   const contentContainer = document.querySelector("#content");
   const homeContainer = document.createElement('div');
@@ -107,6 +163,16 @@ function renderHome(){
   homeContainer.appendChild(homeHero);
   
   contentContainer.appendChild(homeContainer);
+  
+  //btn switcher
+  (0,___WEBPACK_IMPORTED_MODULE_0__.btnSwitcher)();
+
+  const orderNowBtn = document.querySelector("#order-now");
+  orderNowBtn.addEventListener("click", function(){
+    content.innerHTML='';
+    (0,_onload__WEBPACK_IMPORTED_MODULE_1__.pageLoad)();
+    (0,_menu__WEBPACK_IMPORTED_MODULE_2__.renderMenu)();
+});
 }
 
 /***/ }),
@@ -117,6 +183,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "renderMenu": () => (/* binding */ renderMenu)
 /* harmony export */ });
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+
+
 class foodItem {
     constructor(name, price, description){
         this.name = name;
@@ -160,8 +229,6 @@ let menuItem6 = new foodItem(
 function renderMenu() {
     const contentContainer = document.querySelector("#content");
     
-    
-
     const menuContainer = document.createElement("div");
     menuContainer.className='menuContainer';
 
@@ -224,6 +291,53 @@ function renderMenu() {
     menuContainer.appendChild(menuCard6);
 
     contentContainer.appendChild(menuContainer);
+
+    //btn switcher
+    (0,___WEBPACK_IMPORTED_MODULE_0__.btnSwitcher)();
+   
+};
+
+/***/ }),
+/* 4 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderContact": () => (/* binding */ renderContact)
+/* harmony export */ });
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+
+
+function renderContact() {
+    const contentContainer = document.querySelector("#content");
+
+    const contactContainer = document.createElement("div");
+    contactContainer.className='contact'; // easier to us same styling as menu
+
+    const blurb = document.createElement('p'); 
+    blurb.id="blurb";
+    blurb.innerText = 'Feel free to contact us with questions, concerns, and compliments!'
+
+    const info = document.createElement('ul');
+    const infoPoint1 = document.createElement('li');
+    const infoPoint2 = document.createElement('li');
+    const infoPoint3 = document.createElement('li');
+    info.className = 'infoPoints'
+    infoPoint1.innerText = 'Primary Phone: 555-555-5555'
+    infoPoint2.innerText = 'Email: totallyRealEmail@notFake.com'
+    infoPoint3.innerText = 'Twitter: @BlackstoneBistroNotReal'
+
+    info.appendChild(blurb);
+    info.appendChild(infoPoint1);
+    info.appendChild(infoPoint2);
+    info.appendChild(infoPoint3);
+
+    contactContainer.appendChild(info);
+
+    contentContainer.appendChild(contactContainer);
+    
+    //btn switcher 
+    (0,___WEBPACK_IMPORTED_MODULE_0__.btnSwitcher)();
 };
 
 /***/ })
@@ -283,30 +397,11 @@ function renderMenu() {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _onload__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-
-
-
-
-function pageInitialize(){
-    (0,_onload__WEBPACK_IMPORTED_MODULE_0__.pageLoad)();
-    (0,_home__WEBPACK_IMPORTED_MODULE_1__.renderHome)();
-}
-
-pageInitialize();
-
-let content = document.querySelector('#content');
-
-//button switch 
-const menuTab = document.querySelector("#menu");
-
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__(0);
+/******/ 	
 /******/ })()
 ;
